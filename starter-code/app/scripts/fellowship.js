@@ -31,11 +31,11 @@ function makeMiddleEarth() {
 
   
   var section = document.createElement("section");
-  // section.setAttribute('id', 'middleEarth');
+  section.setAttribute('id', 'middleEarth');
       
       for (var i = 0; i < lands.length; i++) {
         var landArticle = document.createElement('article');
-        landArticle.innerHTML=lands[i];
+        landArticle.innerHTML = '<h1>' + lands[i] + '</h1>';
         section.appendChild(landArticle);
       }
         body.appendChild(section);
