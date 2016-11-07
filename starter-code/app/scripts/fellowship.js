@@ -40,8 +40,8 @@ function makeMiddleEarth() {
         section.appendChild(landArticle);
         // console.log(landArticle);
       }
-        body.appendChild(section);
-        // console.log(section);
+  body.appendChild(section);
+  // console.log(section);
 }
 
 makeMiddleEarth();
@@ -51,22 +51,25 @@ makeMiddleEarth();
 
 function makeHobbits() {
 
-  console.log("hey");
+  // console.log("hey");
   // display an unordered list of hobbits in the shire (which is the first article tag on the page)
   // give each hobbit a class of hobbit
   var theShire = document.querySelector('article');
-  cosole.log(theShire);
+  // cosole.log(theShire);
   var hobbitList = document.createElement('ul');
+  theShire.appendChild(hobbitList);
   // console.log(theShire);
   
   for (var i = 0; i < hobbits.length; i++) {
     var hobbitItem = document.createElement('li');
     hobbitItem.innerHTML = hobbits[i];
-    // hobbitItem.class = 'hobbit';
-    console.log("created list!");
+    hobbitItem.setAttribute('class', 'hobbit');
+    // console.log("created list");
+    hobbitList.appendChild(hobbitItem);
   }
-  hobbitList.appendChild(hobbitItem);
-  console.log(hobbitItem);
+  
+  // console.log(hobbitItem);
+  
 
 }
 
@@ -80,17 +83,21 @@ function keepItSecretKeepItSafe() {
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
   // add the ring as a child of Frodo
 
-  // var ring = document.createElement('div');
-  // ring.setAttribute('class', 'magic-imbued-jewelry');
-  // var screech = addEventListener("click", nazgulScreech);
-  // // Frodo.appendChild.(ring);
+  var Frodo = document.querySelectorAll('li.hobbit');
+  // consolelog(Frodo);
+  var ring = document.createElement('div');
+  // console.long(ring);
+  Frodo.appendChild(ring);
 
-
-
-
-
+  ring.setAttribute('id', 'the-ring');
+  ring.setAttribute('class', 'magic-imbued-jewelry');
+  // console.log(the-ring);
+  ring.addEventListener("click", nazgulScreech);
+ 
 
 }
+
+keepItSecretKeepItSafe();
 
 
 // Part 4
@@ -100,7 +107,21 @@ function makeBuddies() {
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
+
+  var mkAside = document.createElement('aside');
+  var rivendell = document.querySelector('article:nth-child(2)');
+  var mkBuddyUL = document.createElement('ul');
+
+    for (var i = 0; i < buddies.length; i++) {
+      var buddyItem = document.createElement('li');
+      buddyItem.innerHTML = buddies[i];
+      mkBuddyUL.appendChild(buddyItem);
+    }
+  mkAside.appendChild(mkBuddyUL);
+
 }
+
+makeBuddies();
 
 
 // Part 5
@@ -108,7 +129,10 @@ function makeBuddies() {
 
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
+
 }
+
+// beautifulStranger();
 
 
 // Part 6
