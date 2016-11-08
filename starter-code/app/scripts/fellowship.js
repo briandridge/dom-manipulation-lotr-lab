@@ -126,13 +126,13 @@ makeBuddies();
 function beautifulStranger() {
 
   // change the 'Strider' textnode to 'Aragorn'
-  var getDude = document.querySelector('#middleEarth.article.h1.Rivendell').innerHTML = Aragorn;
-  console.log('hello ' + getDude);
-  // getDude.textNode = "Aragorn";
+  var getDude = document.querySelectorAll('li');
 
-  // select an li that i know is in a specific location
-
-
+  for (var i = 0; i < getDude.length; i++) {
+    if(getDude[i].textContent === 'Strider') {
+      getDude[i].textContent = 'Aragorn';
+    }
+  }
 }
 
 beautifulStranger();
