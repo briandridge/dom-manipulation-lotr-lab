@@ -83,18 +83,12 @@ function keepItSecretKeepItSafe() {
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
   // add the ring as a child of Frodo
 
-  var Frodo = document.querySelectorAll('li.hobbit');
-  // consolelog(Frodo);
   var ring = document.createElement('div');
-  // console.long(ring);
-  Frodo.appendChild(ring);
-
   ring.setAttribute('id', 'the-ring');
   ring.setAttribute('class', 'magic-imbued-jewelry');
-  // console.log(the-ring);
   ring.addEventListener("click", nazgulScreech);
- 
-
+  var Frodo = document.querySelector('li.hobbit');
+  Frodo.appendChild(ring);
 }
 
 keepItSecretKeepItSafe();
@@ -109,7 +103,6 @@ function makeBuddies() {
   // insert your aside as a child element of rivendell
 
   var mkAside = document.createElement('aside');
-  var rivendell = document.querySelector('article:nth-child(2)');
   var mkBuddyUL = document.createElement('ul');
 
     for (var i = 0; i < buddies.length; i++) {
@@ -118,7 +111,10 @@ function makeBuddies() {
       mkBuddyUL.appendChild(buddyItem);
     }
   mkAside.appendChild(mkBuddyUL);
-
+  var Rivendell = document.querySelector('article:nth-child(2)');
+  // console.log(Rivendell);
+  Rivendell.appendChild(mkAside);
+  // console.log(mkAside);
 }
 
 makeBuddies();
@@ -128,11 +124,18 @@ makeBuddies();
 
 
 function beautifulStranger() {
+
   // change the 'Strider' textnode to 'Aragorn'
+  var getDude = document.querySelector('#middleEarth.article.h1.Rivendell').innerHTML = Aragorn;
+  console.log('hello ' + getDude);
+  // getDude.textNode = "Aragorn";
+
+  // select an li that i know is in a specific location
+
 
 }
 
-// beautifulStranger();
+beautifulStranger();
 
 
 // Part 6
